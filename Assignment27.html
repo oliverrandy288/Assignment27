@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Input Types and Forms</title>
+</head>
+<body>
+    <h1>Explore HTML5 Input Types</h1>
+
+    <form action="#" method="post">
+        <!-- Task 1: Implementing Email Input -->
+        <fieldset>
+            <legend>Email Input</legend>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required>
+            <br>
+            <input type="submit" value="Submit Email">
+        </fieldset>
+
+        <!-- Task 2: Utilizing Number Input -->
+        <fieldset>
+            <legend>Number Input</legend>
+            <label for="quantity">Enter Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="100" step="1" placeholder="Quantity" required>
+            <br>
+            <input type="submit" value="Submit Quantity">
+        </fieldset>
+
+        <!-- Task 3: Employing Date Input -->
+        <fieldset>
+            <legend>Date Input</legend>
+            <label for="date">Select a Date:</label>
+            <input type="date" id="date" name="date" min="2024-01-01" max="2024-12-31" required>
+            <br>
+            <input type="submit" value="Submit Date">
+        </fieldset>
+
+        <!-- Task 4: Enhancing User Experience with Range Input -->
+        <fieldset>
+            <legend>Range Input</legend>
+            <label for="rating">Rate Us:</label>
+            <input type="range" id="rating" name="rating" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+            <br>
+            <input type="submit" value="Submit Rating">
+        </fieldset>
+
+        <!-- Task 5 (BONUS): Capturing Color with Color Input -->
+        <fieldset>
+            <legend>Color Input</legend>
+            <label for="color">Select a Color:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+            <br>
+            <input type="submit" value="Submit Color">
+        </fieldset>
+
+        <!-- Additional Elements -->
+        <fieldset>
+            <legend>Selection Experience</legend>
+            <!-- Select Menu -->
+            <label for="programming-language">Favorite Programming Language:</label>
+            <select id="programming-language" name="programming-language">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="csharp">C#</option>
+            </select>
+            <br>
+
+            <!-- Radio Buttons -->
+            <p>Level of Expertise:</p>
+            <label for="beginner">
+                <input type="radio" id="beginner" name="expertise" value="beginner"> Beginner
+            </label>
+            <label for="intermediate">
+                <input type="radio" id="intermediate" name="expertise" value="intermediate"> Intermediate
+            </label>
+            <label for="advanced">
+                <input type="radio" id="advanced" name="expertise" value="advanced"> Advanced
+            </label>
+            <br>
+
+            <!-- Checkboxes -->
+            <p>Select Your Preferred Development Platforms:</p>
+            <label for="web">
+                <input type="checkbox" id="web" name="platforms" value="web"> Web
+            </label>
+            <label for="mobile">
+                <input type="checkbox" id="mobile" name="platforms" value="mobile"> Mobile
+            </label>
+            <label for="desktop">
+                <input type="checkbox" id="desktop" name="platforms" value="desktop"> Desktop
+            </label>
+            <br>
+            <input type="submit" value="Submit Preferences">
+        </fieldset>
+    </form>
+
+    <script>
+        // Display current value for range input
+        const rangeInput = document.getElementById('rating');
+        const output = rangeInput.nextElementSibling;
+
+        rangeInput.addEventListener('input', function() {
+            output.value = this.value;
+        });
+    </script>
+</body>
+</html>
